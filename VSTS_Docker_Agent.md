@@ -85,6 +85,13 @@ sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos/
 sudo yum install mono
 ```
 
+### install docker
+To run docker containers, we need docker *gasp*...
+```
+sudo yum install -y http://yum.dockerproject.org/repo/main/centos/7/Packages/docker-engine-1.12.1-1.el7.centos.x86_64.rpm
+sudo usermod -aG docker *theUserRunningDocker*
+```
+
 ### install docker-compose
 We need to be able to deploy docker with docker-compose. (make sure pip is up to date)
 ```
