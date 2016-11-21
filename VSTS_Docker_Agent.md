@@ -105,6 +105,7 @@ https://www.npmjs.com/package/octopus-deploy
 sudo npm install -g octopus-deploy
 ```
 Add a ssh step to your VSTS build definition and add in the following command;
+```
 octopus-deploy-create-release 
   --host=*your octopus deploy server* 
   --apiKey=*Octopus API key*
@@ -112,3 +113,4 @@ octopus-deploy-create-release
   --projectSlugOrId=*Octopus project name* 
   --version=1.0-$(Build.SourceVersion) 
   --releaseNotes="Docker CI build"
+```
