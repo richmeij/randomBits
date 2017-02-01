@@ -12,6 +12,32 @@ In order to build docker images inside docker the API versions need to match. He
 sudo yum install -y http://yum.dockerproject.org/repo/main/centos/7/Packages/docker-engine-1.12.1-1.el7.centos.x86_64.rpm
 sudo usermod -aG docker *theUserRunningDocker*
 ```
+
+### Clean install of docker-engine on a new machine
+If you're installing Docker on a new machine, follow these steps:
+
+Install yum-utils
+```
+sudo yum install -y yum-utils
+```
+
+Setup the (stable) docker repo
+```
+sudo yum-config-manager \
+    --add-repo \
+    https://docs.docker.com/engine/installation/linux/repo_files/centos/docker.repo
+```
+
+Update the yum package index
+```
+sudo yum makecache fast
+```
+
+Install the specific Docker engine version
+```
+sudo yum -y install docker-engine-1.12.1-1.el7.centos
+```
+
 ### get vsts agent docker image
 (note the version is equal to the host 1.12.1)
 ```
